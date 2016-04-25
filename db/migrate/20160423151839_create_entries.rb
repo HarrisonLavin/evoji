@@ -4,8 +4,7 @@ class CreateEntries < ActiveRecord::Migration
       t.integer :quality
       t.boolean :binged?
       t.boolean :suicidal_ideation?
-      t.boolean :rage?
-    
+
 
       t.timestamps null: false
     end
