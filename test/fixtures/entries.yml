@@ -2,12 +2,13 @@
 #
 # Table name: entries
 #
-#  id                 :integer          not null, primary key
-#  quality            :integer
-#  binged?            :boolean
-#  suicidal_ideation? :boolean
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
+#  id         :integer          not null, primary key
+#  quality    :integer
+#  binged     :boolean
+#  suicidal   :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

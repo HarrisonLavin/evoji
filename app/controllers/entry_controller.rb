@@ -11,9 +11,14 @@ class EntryController < ApplicationController
   end
 
   def create
-    Entry.new()
+    @entry = Entry.create(entry_params)
+    render json: @entry
   end
 
   def destroy
+  end
+
+  def entry_params
+    params.permit(:quality, :binged, :suicidal)
   end
 end

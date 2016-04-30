@@ -27,16 +27,16 @@ $(function(){
 
   $('button#rate').on('click', function(event){
     event.preventDefault();
-    // $.ajax({
-    //   url: "/entry"
-    //   method: "POST"
-    //   data: { binged?: be_emoji_clicked, suicidal_ideation?: si_emoji_clicked }
-    // })
+    $.ajax({
+      url: "/entry",
+      method:"POST",
+      data: { quality: quality, binged: be_emoji_clicked, suicidal: si_emoji_clicked }
+    })
     alert("rated!")
   })
 
-  $(document).ajaxSuccess(function(){
-    alert("logged!")
+  $(document).ajaxSuccess(function(event, request, settings, data){
+    $()
   })
 
 })
