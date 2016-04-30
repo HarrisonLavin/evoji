@@ -11,6 +11,7 @@ class EntryController < ApplicationController
   end
 
   def create
+    Entry.new()
   end
 
   def destroy
