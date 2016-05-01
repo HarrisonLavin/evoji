@@ -5,4 +5,4 @@
 <button id="si">Suicidal?</button>
 <button id="rate">Rate it!</button>
 
-<%= line_chart Entry.pluck("quality") %>
+<%= line_chart ({name: "Series A", data: @entries}) %>
