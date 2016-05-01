@@ -6,23 +6,32 @@ $(function(){
   $('.arrow#up').on('click', function(event){
     event.preventDefault();
     quality = 1;
-    alert(quality)
   })
    $('.arrow#down').on('click', function(event){
     event.preventDefault();
     quality = -1;
-    alert(quality)
   })
+
+   $('.arrow').on('click', function(event){
+    event.preventDefault
+    if(quality=== 1){
+      $('.arrow#up').css("color", "blue");
+      $('.arrow#down').css("color", "black")
+    } else if(quality=== -1) {
+      $('.arrow#up').css("color", "black");
+      $('.arrow#down').css("color", "blue")
+    }
+   })
   $('#be').on('click', function(event){
     event.preventDefault();
-    be_emoji_clicked ? be_emoji_clicked = false : be_emoji_clicked = true
-    alert(be_emoji_clicked)
+    be_emoji_clicked ? be_emoji_clicked = false : be_emoji_clicked = true;
+    be_emoji_clicked ? $('#be').css("color", "blue") : $('#be').css("color", "black")
   })
 
   $('#si').on('click', function(event){
     event.preventDefault();
-    si_emoji_clicked ? si_emoji_clicked= false : si_emoji_clicked= true
-    alert(si_emoji_clicked)
+    si_emoji_clicked ? si_emoji_clicked= false : si_emoji_clicked= true;
+    si_emoji_clicked ? $('#si').css("color", "blue") : $('#si').css("color", "black")
   })
 
   $('button#rate').on('click', function(event){
@@ -32,11 +41,10 @@ $(function(){
       method:"POST",
       data: { quality: quality, binged: be_emoji_clicked, suicidal: si_emoji_clicked }
     })
-    alert("rated!")
   })
 
   $(document).ajaxSuccess(function(event, request, settings, data){
-    $()
+    debugger;
   })
 
 })

@@ -8,6 +8,7 @@ class EntryController < ApplicationController
 
   def new
     @entry = Entry.new()
+    @entries = Entry.all
   end
 
   def create
