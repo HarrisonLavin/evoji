@@ -1,4 +1,5 @@
 <table border=1>
+
 <tr>
 <td>Date</td>
 <td>Quality</td>
@@ -8,10 +9,10 @@
 <% @entries.each do |entry| %>
 <tr>
 <td><%= entry.created_at %></td>
-<td><%= entry.quality == 1 ? "Good" : "Bad" %></td>
-<td><%= entry.binged %></td>
-<td><%= entry.suicidal%></td>
+<td class="<%= entry.quality%>"><%= entry.quality == 1 ? "Up" : "Down" %></td>
+<td class="<%= entry.binged %>"><%= entry.binged %></td>
+<td class="<%= entry.suicidal %>"><%= entry.suicidal%></td>
 </tr>
 <% end %>
 
-
+<script>$('.-1').css("background-color", "red")</script>
