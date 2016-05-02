@@ -1,0 +1,17 @@
+<table border=1>
+<tr>
+<td>Date</td>
+<td>Quality</td>
+<td>Binged?</td>
+<td>Suicidal Ideation?</td>
+</tr>
+<% @entries.each do |entry| %>
+<tr>
+<td><%= entry.created_at %></td>
+<td><%= entry.quality == 1 ? "Good" : "Bad" %></td>
+<td><%= entry.binged %></td>
+<td><%= entry.suicidal%></td>
+</tr>
+<% end %>
+
+

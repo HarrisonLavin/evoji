@@ -3,7 +3,7 @@ class EntryController < ApplicationController
   end
 
   def index
-    @entries = Entry.where(user_id: current_user.id)
+    @entries = Entry.all
   end
 
   def new
