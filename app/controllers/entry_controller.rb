@@ -1,6 +1,5 @@
 class EntryController < ApplicationController
-  def show
-  end
+
 
   def index
     @entries = Entry.all
@@ -17,6 +16,8 @@ class EntryController < ApplicationController
   end
 
   def destroy
+    @entry = Entry.find(params[:id])
+    @entry.delete
   end
 
   def entry_params

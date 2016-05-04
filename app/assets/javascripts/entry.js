@@ -43,6 +43,14 @@ $(function(){
     })
   })
 
+  $('#delete button').on('click', function(event){
+    event.preventDefault();
+    var created_at = $('body > table > tbody > tr:nth-child(2) > td:nth-child(1)')
+    debugger
+    $.ajax({
+    })
+  })
+
   $(document).ajaxSuccess(function(event, request, settings, data){
     debugger;
   })
