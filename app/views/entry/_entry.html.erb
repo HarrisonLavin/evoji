@@ -1,0 +1,7 @@
+<tr >
+  <td><%= entry.created_at %></td>
+  <td class="<%= entry.quality%>"><%= entry.quality == 1 ? "Up" : "Down" %></td>
+  <td class="<%= entry.binged %>"><%= entry.binged %></td>
+  <td class="<%= entry.suicidal %>"><%= entry.suicidal%></td>
+  <td id="<%= entry.id %>"><button>Delete This Entry</button></td>
+</tr>

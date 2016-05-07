@@ -1,6 +1,5 @@
 class EntryController < ApplicationController
 
-
   def index
     @entries = Entry.all
   end
@@ -12,12 +11,14 @@ class EntryController < ApplicationController
 
   def create
     @entry = Entry.create(entry_params)
-    render json: @entry
+    render_to_string partial: 'entry', locals: { entry => @entry }
   end
 
   def destroy
     @entry = Entry.find(params[:id])
     @entry.delete
+    @entries= Entry.all
+    redner json: @entries
   end
 
   def entry_params

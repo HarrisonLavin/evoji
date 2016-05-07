@@ -39,15 +39,19 @@ $(function(){
     $.ajax({
       url: "/entry",
       method:"POST",
-      data: { quality: quality, binged: be_emoji_clicked, suicidal: si_emoji_clicked }
+      data: { quality: quality, binged: be_emoji_clicked, suicidal: si_emoji_clicked },
+      success: function(result){
+        $('table').append('')
+      }
     })
   })
 
-  $('#delete button').on('click', function(event){
+  $('tablebutton').on('click', function(event){
     event.preventDefault();
-    var created_at = $('body > table > tbody > tr:nth-child(2) > td:nth-child(1)')
-    debugger
+    var entryID = this.parentElement.id;
     $.ajax({
+      url: '/entry/' + entryID,
+      method: "DELETE"
     })
   })
 
