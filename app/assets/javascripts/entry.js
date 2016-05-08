@@ -46,7 +46,7 @@ $(function(){
     })
   })
 
-  $('tablebutton').on('click', function(event){
+  $('table button').on('click', function(event){
     event.preventDefault();
     var entryID = this.parentElement.id;
     $.ajax({

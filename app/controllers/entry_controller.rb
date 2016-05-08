@@ -15,6 +15,7 @@ class EntryController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @entry = Entry.find(params[:id])
     @entry.delete
     @entries= Entry.all
