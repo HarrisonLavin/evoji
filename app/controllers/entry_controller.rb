@@ -19,7 +19,7 @@ class EntryController < ApplicationController
     @entry = Entry.find(params[:id])
     @entry.delete
     @entries= Entry.all
-    redner json: @entries
+    render json: @entries
   end
 
   def entry_params
