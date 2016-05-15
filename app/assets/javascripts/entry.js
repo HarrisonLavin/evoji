@@ -56,7 +56,6 @@ $(function(){
   })
 
   $(document).ajaxSuccess(function(event, request, settings, data){
-    debugger;
   })
 
 })
