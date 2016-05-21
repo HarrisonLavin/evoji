@@ -11,18 +11,17 @@ class EntryController < ApplicationController
 
   def create
     @entry = Entry.create(entry_params)
-    render_to_string partial: 'entry', locals: { entry => @entry }
+    render json: @entry
   end
 
   def destroy
-    binding.pry
     @entry = Entry.find(params[:id])
     @entry.delete
     @entries= Entry.all
-    render json: @entries
+    render_to_string partial: "entries", locals: {entry: @entries}
   end
 
   def entry_params
-    params.permit(:quality, :binged, :suicidal)
+    params.permit(:quality, :binged, :suicidal, :rage, :despair)
   end
 end

@@ -2,13 +2,17 @@ $(function(){
   var quality = 0;
   var be_emoji_clicked = false;
   var si_emoji_clicked = false;
+  var ds_emoji_clicked = false;
+  var rg_emoji_clicked = false;
 
   $('.arrow#up').on('click', function(event){
     event.preventDefault();
+    console.log("Up Arrow Clicked")
     quality = 1;
   })
    $('.arrow#down').on('click', function(event){
     event.preventDefault();
+    console.log("Down Arrow Clicked")
     quality = -1;
   })
 
@@ -24,14 +28,30 @@ $(function(){
    })
   $('#be').on('click', function(event){
     event.preventDefault();
+    console.log("Binge Eating Clicked")
     be_emoji_clicked ? be_emoji_clicked = false : be_emoji_clicked = true;
     be_emoji_clicked ? $('#be').css("color", "blue") : $('#be').css("color", "black")
   })
 
   $('#si').on('click', function(event){
     event.preventDefault();
+    console.log("suicidal Ideation Clicked")
     si_emoji_clicked ? si_emoji_clicked= false : si_emoji_clicked= true;
     si_emoji_clicked ? $('#si').css("color", "blue") : $('#si').css("color", "black")
+  })
+
+  $('#ds').on('click', function(event){
+    event.preventDefault();
+    console.log("Despair Clicked")
+    ds_emoji_clicked ? ds_emoji_clicked = false : ds_emoji_clicked = true;
+    ds_emoji_clicked ? $('#ds').css("color", "blue") : $('#ds').css("color", "black")
+  })
+
+  $('#rg').on('click', function(event){
+    event.preventDefault();
+    console.log("Rage Clicked")
+    rg_emoji_clicked ? rg_emoji_clicked= false : rg_emoji_clicked= true;
+    rg_emoji_clicked ? $('#rg').css("color", "blue") : $('#rg').css("color", "black")
   })
 
   $('button#rate').on('click', function(event){
@@ -39,8 +59,9 @@ $(function(){
     $.ajax({
       url: "/entry",
       method:"POST",
-      data: { quality: quality, binged: be_emoji_clicked, suicidal: si_emoji_clicked },
+      data: { quality: quality, binged: be_emoji_clicked, suicidal: si_emoji_clicked, rage: rg_emoji_clicked, despair: ds_emoji_clicked },
       success: function(result){
+        debugger;
         $('table').append('')
       }
     })
@@ -56,6 +77,8 @@ $(function(){
   })
 
   $(document).ajaxSuccess(function(event, request, settings, data){
+    debugger;
+    $('#entries').html
   })
 
 })
