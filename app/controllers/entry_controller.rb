@@ -17,8 +17,7 @@ class EntryController < ApplicationController
   def destroy
     @entry = Entry.find(params[:id])
     @entry.delete
-    @entries= Entry.all
-    render_to_string partial: "entries", locals: {entry: @entries}
+    render json: {id: params[:id].to_i}
   end
 
   def entry_params

@@ -4,6 +4,7 @@ $(function(){
   var si_emoji_clicked = false;
   var ds_emoji_clicked = false;
   var rg_emoji_clicked = false;
+  var entryID;
 
   $('.arrow#up').on('click', function(event){
     event.preventDefault();
@@ -69,16 +70,17 @@ $(function(){
 
   $('table button').on('click', function(event){
     event.preventDefault();
-    var entryID = this.parentElement.id;
+    entryID = this.parentElement.parentElement.id;
     $.ajax({
       url: '/entry/' + entryID,
-      method: "DELETE"
+      method: "DELETE",
+      success: function(result){
+        $('#'+result.id).remove()
+      }
     })
   })
 
   $(document).ajaxSuccess(function(event, request, settings, data){
-    debugger;
-    $('#entries').html
   })
 
 })
