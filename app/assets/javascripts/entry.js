@@ -6,14 +6,34 @@ $(function(){
   var rg_emoji_clicked = false;
   var entryID;
 
+  $('.arrow#up').hover(
+    function(){
+      $('#upArrow').addClass( "glow");
+    },
+    function(){
+      $("#upArrow").removeClass("glow");
+    }
+)
+
   $('.arrow#up').on('click', function(event){
-    event.preventDefault();
     console.log("Up Arrow Clicked")
+    $("#downArrow").removeClass("glow");
+    $('#upArrow').addClass( "glow");
     quality = 1;
   })
+
+  $('.arrow#down').hover(
+    function(){
+      $('#downArrow').addClass( "glow");
+    },
+    function(){
+      $("#downArrow").removeClass("glow");
+      $("#upArrow").removeClass("glow");
+    }
+)
    $('.arrow#down').on('click', function(event){
-    event.preventDefault();
     console.log("Down Arrow Clicked")
+    $('#downArrow').addClass( "glow");
     quality = -1;
   })
 
