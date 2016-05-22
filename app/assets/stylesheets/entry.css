@@ -14,3 +14,6 @@
   -moz-box-shadow: 0  5px 10px green;
   box-shadow: 0 5px 10px green;
 }
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
