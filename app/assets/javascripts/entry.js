@@ -6,7 +6,7 @@ $(function(){
   var rg_emoji_clicked = false;
   var entryID;
 
-  $('.arrow#up').hover(
+  $('#upArrow').hover(
     function(){
       $('#upArrow').addClass( "glow");
     },
@@ -17,12 +17,12 @@ $(function(){
 
   $('.arrow#up').on('click', function(event){
     console.log("Up Arrow Clicked")
-    $("#downArrow").removeClass("glow");
-    $('#upArrow').addClass( "glow");
+    $("#downArrow").removeClass("selected");
+    $('#upArrow').addClass( "selected");
     quality = 1;
   })
 
-  $('.arrow#down').hover(
+  $('#downArrow').hover(
     function(){
       $('#downArrow').addClass( "glow");
     },
@@ -33,46 +33,37 @@ $(function(){
 )
    $('.arrow#down').on('click', function(event){
     console.log("Down Arrow Clicked")
-    $('#downArrow').addClass( "glow");
+    $('#downArrow').addClass( "selected");
+    $('#upArrow').removeClass("selected")
     quality = -1;
   })
 
-   $('.arrow').on('click', function(event){
-    event.preventDefault
-    if(quality=== 1){
-      $('.arrow#up').css("color", "blue");
-      $('.arrow#down').css("color", "black")
-    } else if(quality=== -1) {
-      $('.arrow#up').css("color", "black");
-      $('.arrow#down').css("color", "blue")
-    }
-   })
   $('#be').on('click', function(event){
     event.preventDefault();
     console.log("Binge Eating Clicked")
     be_emoji_clicked ? be_emoji_clicked = false : be_emoji_clicked = true;
-    be_emoji_clicked ? $('#be').css("color", "blue") : $('#be').css("color", "black")
+    be_emoji_clicked ? $('#be').addClass("selected") : $('#be').removeClass("selected")
   })
 
   $('#si').on('click', function(event){
     event.preventDefault();
     console.log("suicidal Ideation Clicked")
     si_emoji_clicked ? si_emoji_clicked= false : si_emoji_clicked= true;
-    si_emoji_clicked ? $('#si').css("color", "blue") : $('#si').css("color", "black")
+    si_emoji_clicked ? $('#si').addClass("selected") : $('#si').removeClass("selected")
   })
 
   $('#ds').on('click', function(event){
     event.preventDefault();
     console.log("Despair Clicked")
     ds_emoji_clicked ? ds_emoji_clicked = false : ds_emoji_clicked = true;
-    ds_emoji_clicked ? $('#ds').css("color", "blue") : $('#ds').css("color", "black")
+    ds_emoji_clicked ? $('#ds').addClass("selected") : $('#ds').removeClass("selected")
   })
 
   $('#rg').on('click', function(event){
     event.preventDefault();
     console.log("Rage Clicked")
     rg_emoji_clicked ? rg_emoji_clicked= false : rg_emoji_clicked= true;
-    rg_emoji_clicked ? $('#rg').css("color", "blue") : $('#rg').css("color", "black")
+    rg_emoji_clicked ? $('#rg').addClass("selected") : $('#rg').removeClass("selected")
   })
 
   $('button#rate').on('click', function(event){

@@ -8,3 +8,9 @@
   -moz-box-shadow: 0 0 20px blue;
   box-shadow:0 0 20px blue;
 }
+
+.selected {
+  -webkit-box-shadow: 0  5px 10px green;
+  -moz-box-shadow: 0  5px 10px green;
+  box-shadow: 0 5px 10px green;
+}
