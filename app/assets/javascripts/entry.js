@@ -8,7 +8,7 @@ $(function(){
 
   $('#upArrow').hover(
     function(){
-      $('#upArrow').addClass( "grow");
+      $('#upArrow').addClass( "glow");
     },
     function(){
       $("#upArrow").removeClass("glow");
